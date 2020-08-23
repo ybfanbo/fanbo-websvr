@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /api  #本地起作用，打成war包之后不起作用
+
+
+spring:
+  redis:
+    host: 192.168.0.104
+    port: 6379
+    password: '028911'
+  datasource:
+    websvr:
+      url: jdbc:mysql://192.168.0.104:3306/websvr_db
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: '028911'
+    extra:
+      url: jdbc:mysql://192.168.0.104:3306/extra_db
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: '028911'
+  jpa:
+    show-sql: true   #控制台打印SQL语句
+
+
+  freemarker:
+    template-loader-path: classpath:/templates  #设定ftl文件路径
+    cache: true   #打开缓存，测试环境为false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
